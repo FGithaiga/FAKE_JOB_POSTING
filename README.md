@@ -60,37 +60,37 @@ Data type variety: Mixture of categorical, textual, and binary fields requires t
 
 # 🔍 ANALYSIS
 
-1. ![alt text](Images/image.png)
+![alt text](Images/image.png)
 
 ⚖️ Fraudulent vs Legitimate Jobs: Legitimate jobs dominate (~16,000) while fraudulent ones are rare (~2,000), highlighting class imbalance.
 
 
 
-2. ![alt text](Images/image-1.png)
+![alt text](Images/image-1.png)
 
 📌 Employment Type Distribution: Full-time dominates, followed by unknowns, with contract, part-time, and temporary roles being far less common.
 
 
 
-3. ![alt text](Images/image-2.png)
+![alt text](Images/image-2.png)
 
 🎓 Education Requirements: “Unknown” is the largest category, followed by Bachelor’s Degree. Other levels (Master’s, High School, Associate, etc.) appear less frequently.
 
 
 
-4. ![alt text](Images/image-3.png)
+![alt text](Images/image-3.png)
 
 📝 Job Description Lengths: Most descriptions fall within 0–2000 characters, showing postings are generally concise.
 
 
 
-5. ![alt text](Images/image-4.png)
+![alt text](Images/image-4.png)
 
 💼 Employment Type & Fraud: Full-time roles are the most common and mostly legitimate. Fraudulent jobs appear in much smaller numbers across all types.
 
 
 
-6. ![alt text](Images/image-5.png)
+![alt text](Images/image-5.png)
 
 🏢 Company Logo Presence: Jobs with a logo are overwhelmingly legitimate, suggesting logo presence is a strong trust indicator.
 
