@@ -141,6 +141,19 @@ X_resampled, y_resampled = smote.fit_resample(X, y)
 
 
 # 🤖 MODELLING 
+I trained four models:
+
+| Model | Accuracy | Notes |
+|-------|---------|-------|
+| Logistic Regression | Good baseline, weaker recall on fraud cases |
+| Decision Tree | High risk of overfitting |
+| **Random Forest** | Strong overall performance |
+| **XGBoost** | Very strong but more complex to tune |
+
+**Recommended Final Model:** **Random Forest Classifier**  
+- Balanced accuracy  
+- Strong recall for fraudulent cases  
+- Works well with mixed numeric + text features  
 
 # 🧪 EVALUATION
 
