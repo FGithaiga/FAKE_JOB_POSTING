@@ -196,5 +196,22 @@ joblib.dump(vectorizer, "tfidf_vectorizer.pkl")
 
 
 # 📢 FINDINGS 
+1. **Most job postings in the dataset are legitimate**, with fraudulent postings forming only a small portion of the data. This imbalance could have led to misleading model performance if not handled properly, which is why SMOTE was necessary.
+
+2. **Fraudulent job postings tend to share certain characteristics**, including:
+   - Very **short company profiles** or entirely missing descriptions.
+   - Lack of specific job requirements or responsibilities.
+   - Promises of **high earnings with minimal qualifications**.
+   - Frequent use of **vague language**, urgency, and generic role titles.
+
+3. **Textual information is the strongest predictor** of fraud. The model relied heavily on:
+   - Job description wording
+   - Structure and completeness of company profile
+   - Specificity in listed requirements
+
+4. After applying **SMOTE** and training using the **Random Forest classifier**, the model achieved:
+   - **High accuracy** in detecting real jobs
+   - **Strong recall for fraudulent postings**, meaning it can successfully flag most scams
+   - Some remaining risk of **false negatives** (frauds that appear legitimate), but significantly minimized
 
 # 🚀 RECCOMANDATIONS
