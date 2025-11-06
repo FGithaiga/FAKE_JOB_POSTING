@@ -155,7 +155,45 @@ I trained four models:
 - Strong recall for fraudulent cases  
 - Works well with mixed numeric + text features  
 
-# 🧪 EVALUATION
+## ✅ Final Model Performance (Random Forest)
+
+```
+              precision    recall  f1-score   support
+           0       1.00      1.00      1.00      3403
+           1       1.00      0.92      0.96       173
+    accuracy                           1.00      3576
+```
+
+### Interpretation:
+- The model correctly identifies most fraudulent jobs
+- A slight drop in recall means a few fraudulent jobs may still slip through
+
+---
+
+## 🎨 Visualizations
+
+### Confusion Matrix
+![Confusion Matrix](images/confusion_matrix.png)
+
+### Distribution of Job Description Length
+![Description Length Histogram](images/description_length.png)
+
+---
+
+## 🚀 Deployment (Pending)
+
+The model is being deployed using **Streamlit**.
+
+### Current issue:
+The Streamlit environment uses a different version of **scikit-learn** than the model was trained with.
+
+### Solution:
+Retrain the model and resave using the same environment where Streamlit runs:
+
+```python
+joblib.dump(rf_model, "fraud_job_classifier.pkl")
+joblib.dump(vectorizer, "tfidf_vectorizer.pkl")
+
 
 # 📢 FINDINGS 
 
