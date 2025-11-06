@@ -94,6 +94,35 @@ Data type variety: Mixture of categorical, textual, and binary fields requires t
 
 🏢 Company Logo Presence: Jobs with a logo are overwhelmingly legitimate, suggesting logo presence is a strong trust indicator.
 
+## 🧠 Feature Engineering
+
+To convert raw text into usable numerical format and improve predictive power:
+
+1. **Text Length Features**
+   ```python
+   df['desc_length'] = df['description'].str.len()
+   df['profile_length'] = df['company_profile'].str.len()
+   df['req_length'] = df['requirements'].str.len()
+   df['benefits_length'] = df['benefits'].str.len()
+   ```
+
+2. **Missing Text Indicators**
+   ```python
+   df['missing_text_fields'] = (
+       df[['company_profile', 'description', 'requirements', 'benefits']].isna().sum(axis=1)
+   )
+   ```
+
+3. **Text Vectorization (TF-IDF)**
+   ```python
+   vectorizer = TfidfVectorizer(stop_words='english', max_features=5000)
+   X_text = vectorizer.fit_transform(df['text'])
+   ```
+
+4. **Dummy Encoding for Categorical Variables**
+   ```python
+   df = pd.get_dummies(df, columns=['employment_type', 'required_experience', 'required_education', 'industry', 'function'], drop_first=True)
+   ```
 
 
 # 🤖 MODELLING 
