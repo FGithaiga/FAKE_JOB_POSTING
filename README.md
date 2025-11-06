@@ -215,3 +215,29 @@ joblib.dump(vectorizer, "tfidf_vectorizer.pkl")
    - Some remaining risk of **false negatives** (frauds that appear legitimate), but significantly minimized
 
 # 🚀 RECCOMANDATIONS
+1. **Use the classifier as a warning system, not an automatic blocker.**  
+   Suspicious job ads should be flagged for **human review** rather than removed automatically.
+
+2. **Encourage job posters to provide complete information.**  
+   Platforms should **require detailed company profiles and role descriptions** — missing information is a key fraud signal.
+
+3. **Highlight transparency indicators**, such as:
+   - Company website link
+   - Registered business address
+   - Social media or LinkedIn presence  
+   Lack of these should trigger additional verification.
+
+4. **Continuously update the model** with newly flagged job postings.  
+   Fraud tactics evolve, so retraining the model periodically will maintain accuracy.
+
+5. **Integrate the model into job posting platforms** to provide:
+   - Real-time fraud risk scoring
+   - Alerts to job seekers before applying
+   - Assistance to moderators reviewing reports
+
+---
+
+## 🎯 Conclusion
+
+This project demonstrates that Machine Learning can effectively identify fraudulent job postings using a combination of **text analysis**, **feature engineering**, and **balanced model training**.  
+While the model performs extremely well, **human oversight remains essential** to avoid misclassification and adapt to evolving scam strategies.
