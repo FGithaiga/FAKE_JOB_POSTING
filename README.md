@@ -94,6 +94,7 @@ Data type variety: Mixture of categorical, textual, and binary fields requires t
 
 🏢 Company Logo Presence: Jobs with a logo are overwhelmingly legitimate, suggesting logo presence is a strong trust indicator.
 
+
 ## 🧠 Feature Engineering
 
 To convert raw text into usable numerical format and improve predictive power:
@@ -123,6 +124,20 @@ To convert raw text into usable numerical format and improve predictive power:
    ```python
    df = pd.get_dummies(df, columns=['employment_type', 'required_experience', 'required_education', 'industry', 'function'], drop_first=True)
    ```
+## ⚖️ Handling Class Imbalance (SMOTE)
+
+The dataset is highly imbalanced:
+
+| Class | Meaning | Count |
+|------|---------|-------|
+| 0 | Real Job | High |
+| 1 | Fake Job | Very Low |
+
+To handle this, we used **SMOTE** to oversample the minority class:
+
+```python
+smote = SMOTE(random_state=42)
+X_resampled, y_resampled = smote.fit_resample(X, y)
 
 
 # 🤖 MODELLING 
